@@ -2,6 +2,8 @@ import Card from "./components/Card";
 import List from "./components/List";
 import TypeMe from "./components/TypeMe";
 import { useState } from "react";
+import MyFormSolutionOne from "./components/MyFormSolutionOne";
+import MyFormSolutionTwo from "./components/MyFormSolutionTwo";
 
 const user = {
   name: "John Doe",
@@ -48,6 +50,8 @@ function App() {
       <Card user={user} />
       <List users={users} />
       <TypeMe focus={focus} onFocus={handleFocus} onFocusOut={handleFocusOut} />
+      <MyFormSolutionOne />
+      <MyFormSolutionTwo />
     </div>
   );
 }
