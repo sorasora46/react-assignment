@@ -13,14 +13,18 @@ function MyFormSolutionOne() {
   };
 
   const handleNameChange = (event) => {
-    if (event.target.value.match("^[a-zA-Z ]*$") != null) {
-      setName(event.target.value);
+    const input = event.target.value;
+    const regex = /^[a-zA-Z ]*$/;
+    if (regex.test(input)) {
+      setName(input);
     }
   };
 
   const handleLastnameChange = (event) => {
-    if (event.target.value.match("^[a-zA-Z ]*$") != null) {
-      setLastname(event.target.value);
+    const input = event.target.value;
+    const regex = /^[a-zA-Z ]*$/;
+    if (regex.test(input)) {
+      setLastname(input);
     }
   };
 
@@ -30,11 +34,8 @@ function MyFormSolutionOne() {
 
   const handlePhoneChange = (event) => {
     const input = event.target.value;
-    const regex = /^[0-9]*$/;
-    if (regex.test(input) && phone.length < 10) {
-      setPhone(input);
-    }
-    if (regex.test(input) && phone.length >= 10 && input.length < 10) {
+    const regex = /^[0-9]{0,10}$/;
+    if (regex.test(input)) {
       setPhone(input);
     }
   };
